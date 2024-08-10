@@ -1,0 +1,81 @@
+.complaint-form {
+  max-width: 64rem;
+  margin: 1rem auto;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-select,
+.form-input,
+.form-textarea,
+.form-file {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.form-select {
+  padding: 0.5rem 1rem;
+}
+
+.form-select option {
+  display: none;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-button {
+  font-family: ManRope;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #e6e5e5;
+  color: black;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  height: 3rem;
+}

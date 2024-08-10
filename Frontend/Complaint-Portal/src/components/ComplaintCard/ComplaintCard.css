@@ -1,0 +1,89 @@
+.complaint-status-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  border: 1px solid #303036;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  background: #18181a;
+  color: #e7e7e4;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #e7e7e4;
+}
+
+.card-content {
+  margin-top: 1rem;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.status-text {
+  font-weight: bold;
+}
+
+.status-text.green {
+  color: #38a169;
+}
+
+.status-text.yellow {
+  color: #ecc94b;
+}
+
+.status-text.red {
+  color: #e53e3e;
+}
+
+.feedback-button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.feedback-button:hover {
+  background-color: #0056b3;
+}
