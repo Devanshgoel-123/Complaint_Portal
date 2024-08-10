@@ -10,7 +10,7 @@ const userSchema=z.object({
     room:z.number().int().gt(5)
 })
 
-userRouter.post("/register",async (req:Request,res:Response)=>{
+userRouter.get("/register",async (req:Request,res:Response)=>{
    const body=req.body;
    const {success}=userSchema.safeParse(body);
    if(success){

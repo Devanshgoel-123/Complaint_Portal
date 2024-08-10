@@ -13,43 +13,54 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const complaintRouter = express_1.default.Router();
+const workerRouter = express_1.default.Router();
 const zod_1 = require("zod");
-// import { PrismaClient } from '@prisma/client'
-// const prisma = new PrismaClient();
+const client_1 = require("@prisma/client");
+const prisma = new client_1.PrismaClient();
 var category;
 (function (category) {
     category["carpenter"] = "carpenter";
     category["plumber"] = "plumber";
     category["cleaner"] = "cleaner";
 })(category || (category = {}));
-const complaintSchema = zod_1.z.object({
+const workerSchema = zod_1.z.object({
+    name: zod_1.z.string(),
     category: zod_1.z.nativeEnum(category),
-    subCategory: zod_1.z.string(),
+    contact: zod_1.z.number().gt(10),
+    hostel: zod_1.z.string()
 });
-complaintRouter.post("/registerComplaint", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const complaintBody = req.body;
-    console.log(complaintBody);
-    const { success } = complaintSchema.safeParse(complaintBody);
+workerRouter.get("/registerWorker", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const body = req.body;
+    const { success } = workerSchema.safeParse(body);
     if (success) {
-        // const complaint=await prisma.complaint.create({
-        //     data:complaintBody
-        // })
-        // if(complaint){
-        //     return res.status(200).json({
-        //         message:"Complaint registered SuccessFully"
-        //     })
-        // }else{
-        //     res.status(400).json({
-        //         message:"Server Error couldn't register Complaint"
-        //     })
-        // }
-        console.log(1);
+        const findWorker = yield prisma.worker.findFirst({
+            where: {},
+        });
+        if (findWorker) {
+            res.status(401).json({
+                message: "Worker already there"
+            });
+        }
+        else {
+            try {
+                const worker = yield prisma.user.create({
+                    data: body
+                });
+                res.status(200).json({
+                    message: "You have been registered"
+                });
+            }
+            catch (err) {
+                res.status(401).json({
+                    message: "Some error occured try to Re-Register"
+                });
+            }
+        }
     }
     else {
-        res.status(401).json({
+        return res.status(401).json({
             message: "Incorrect Inputs"
         });
     }
 }));
-exports.default = complaintRouter;
+exports.default = workerRouter;

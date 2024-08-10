@@ -10,14 +10,21 @@ const ComplaintForm = () => {
     { value: "cleaner", label: "Cleaner" },
   ];
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
     axios
+<<<<<<< HEAD
       .post("http://localhost:3000/complaint/", {
         category: "carpenter",
         subCategory: "furniture",
+=======
+      .post("http://localhost:3000/complaint/registerComplaint", {
+        category: "carpenter",
+        subCategory: "Furniture",
+>>>>>>> c5f3c348b97aabbf324777db79c4b0c6ec998405
       })
       .then(function (response) {
-        console.log(response);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
