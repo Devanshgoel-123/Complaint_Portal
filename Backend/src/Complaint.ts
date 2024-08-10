@@ -13,7 +13,7 @@ const complaintSchema=z.object({
     category : z.nativeEnum(category),
     subCategory : z.string(),
 })
-complaintRouter.post("/register",async (req:Request,res:Response)=>{
+complaintRouter.post("/registerComplaints",async (req:Request,res:Response)=>{
    const complaintBody=req.body;
    const {success}=complaintSchema.safeParse(complaintBody);
    if(success){

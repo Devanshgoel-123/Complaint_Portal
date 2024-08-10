@@ -23,7 +23,7 @@ const userSchema = zod_1.z.object({
     hostel: zod_1.z.string(),
     room: zod_1.z.number().int().gt(5)
 });
-userRouter.post("/register", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+userRouter.get("/register", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const body = req.body;
     const { success } = userSchema.safeParse(body);
     if (success) {

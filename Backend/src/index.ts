@@ -2,7 +2,7 @@ import express,{Response,Request,Express} from "express";
 import cors from "cors";
 import { PrismaClient } from '@prisma/client'
 import userRouter from "./user"
-import complaintRouter from "./Complaint";
+import complaintRouter from "./Complaint"
 const prisma = new PrismaClient();
 
 const app:Express=express();
