@@ -15,7 +15,7 @@
   position: relative;
   font-family: Arial, sans-serif;
   border-radius: 0.25rem;
-  border: 1px solid #cccccc44;
+  border: 1px solid #3030368f;
   background-color: #1a1a1a;
   color: #ffffff;
   height: 3rem;
@@ -26,7 +26,7 @@
   padding: 0.5rem;
   cursor: pointer;
   background-color: inherit;
-  border: 1px solid #ccc;
+  border: 1px solid #303036;
   border-radius: 0.25rem;
   display: flex;
   align-items: center;
@@ -37,34 +37,50 @@
 .select-selected:after {
   content: "";
   position: absolute;
-  right: 10px;
+  right: 1rem; /* Adjusted for centering */
   border: 6px solid transparent;
   border-color: #ffffff transparent transparent transparent;
-  top: calc(50% - 3px);
+  top: calc(50% - 3px); /* Center vertically */
   transform: translateY(-50%);
 }
 
 .select-arrow-active:after {
   border-color: transparent transparent #ffffff transparent;
-  top: 7px;
+  top: calc(50% - 3px); /* Center vertically */
 }
 
 .select-items {
   position: absolute;
   background-color: #242428;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
   z-index: 99;
+  padding: 0.25rem;
 }
 
-.select-items div {
-  padding: 0.5rem;
+.select-item {
+  padding: 1rem 0.5rem;
+
   color: #ffffff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.select-items div:hover,
-.same-as-selected {
+.select-item:hover {
   background-color: #212121;
+  border-radius: 0.25rem;
+}
+
+.tick {
+  font-size: 1.2rem;
+  color: white;
+  margin-right: 1rem; /* Space between tick and text */
+  flex-shrink: 0; /* Prevent tick from shrinking */
+}
+
+.option-text {
+  flex: 1; /* Ensure text takes up remaining space */
 }

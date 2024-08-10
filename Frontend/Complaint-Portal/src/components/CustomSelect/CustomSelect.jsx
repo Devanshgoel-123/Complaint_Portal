@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import "./CustomSelect.css";
 
 const CustomSelect = ({ options = [], defaultValue = "", label }) => {
@@ -33,19 +35,31 @@ const CustomSelect = ({ options = [], defaultValue = "", label }) => {
           className={`select-selected ${isOpen ? "select-arrow-active" : ""}`}
           onClick={handleSelectClick}
         >
-          {selectedValue}
+          {selectedValue || "Select an option"}
         </div>
         {isOpen && (
           <div className="select-items">
             {options.map((option) => (
               <div
                 key={option.value}
-                className={
+                className={`select-item ${
                   selectedValue === option.label ? "same-as-selected" : ""
-                }
+                }`}
                 onClick={() => handleOptionClick(option.label)}
               >
-                {option.label}
+                {selectedValue === option.label ? (
+                  <FontAwesomeIcon icon={faCheck} className="tick" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    style={{
+                      marginRight: "1rem",
+                      fontSize: "1.2rem",
+                      visibility: "hidden",
+                    }}
+                  />
+                )}
+                <span className="option-text">{option.label}</span>
               </div>
             ))}
           </div>

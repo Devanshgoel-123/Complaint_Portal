@@ -13,8 +13,8 @@ const ComplaintForm = () => {
   const submitHandler = () => {
     axios
       .post("http://localhost:3000/complaint/", {
-        service: "Carpenter",
-        subCategory: "Furniture",
+        category: "carpenter",
+        subCategory: "furniture",
       })
       .then(function (response) {
         console.log(response);
