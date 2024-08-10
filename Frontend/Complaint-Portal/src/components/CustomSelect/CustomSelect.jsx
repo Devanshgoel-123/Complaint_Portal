@@ -47,18 +47,12 @@ const CustomSelect = ({ options = [], defaultValue = "", label }) => {
                 }`}
                 onClick={() => handleOptionClick(option.label)}
               >
-                {selectedValue === option.label ? (
-                  <FontAwesomeIcon icon={faCheck} className="tick" />
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faCheck}
-                    style={{
-                      marginRight: "1rem",
-                      fontSize: "1.2rem",
-                      visibility: "hidden",
-                    }}
-                  />
-                )}
+                <FontAwesomeIcon
+                  icon={faCheck}
+                  className="tick"
+                  visibility={selectedValue === option.label ? "" : "hidden"}
+                />
+
                 <span className="option-text">{option.label}</span>
               </div>
             ))}

@@ -23,7 +23,7 @@
 
 .select-selected {
   position: relative;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   background-color: inherit;
   border: 1px solid #303036;
@@ -61,7 +61,6 @@
 
 .select-item {
   padding: 1rem 0.5rem;
-
   color: #ffffff;
   cursor: pointer;
   display: flex;
@@ -75,9 +74,9 @@
 }
 
 .tick {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: white;
-  margin-right: 1rem; /* Space between tick and text */
+  margin-right: 0.5rem; /* Space between tick and text */
   flex-shrink: 0; /* Prevent tick from shrinking */
 }
 
