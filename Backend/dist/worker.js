@@ -34,9 +34,7 @@ workerRouter.get("/registerWorker", (req, res) => __awaiter(void 0, void 0, void
     const { success } = workerSchema.safeParse(body);
     if (success) {
         const findWorker = yield prisma.worker.findFirst({
-            where: {
-                contact: body.contact
-            },
+            where: {},
         });
         if (findWorker) {
             res.status(401).json({

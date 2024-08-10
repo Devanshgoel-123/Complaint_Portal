@@ -23,7 +23,7 @@ workerRouter.get("/registerWorker",async (req:Request,res:Response)=>{
    if(success){
     const findWorker=await prisma.worker.findFirst({
         where:{
-            contact:body.contact
+            
         },
     })
     if(findWorker){

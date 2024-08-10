@@ -10,14 +10,15 @@ const ComplaintForm = () => {
     { value: "cleaner", label: "Cleaner" },
   ];
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
     axios
-      .post("http://localhost:3000/complaint/", {
-        service: "Carpenter",
+      .post("http://localhost:3000/complaint/registerComplaint", {
+        category: "carpenter",
         subCategory: "Furniture",
       })
       .then(function (response) {
-        console.log(response);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
