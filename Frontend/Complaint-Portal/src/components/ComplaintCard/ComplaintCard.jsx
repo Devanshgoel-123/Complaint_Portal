@@ -8,7 +8,7 @@ const ComplaintCard = ({
   assignedTo,
   completedOn,
 }) => (
-  <div className="card">
+  <div className="complaint-card">
     <div className="card-header">
       <h3 className="card-title">{title}</h3>
       <p className="card-description">{description}</p>

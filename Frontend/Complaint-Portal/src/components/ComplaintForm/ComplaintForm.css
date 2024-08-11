@@ -54,6 +54,9 @@
 
 .form-textarea {
   resize: vertical;
+  outline: none;
+  border: 1px solid #3030368f;
+  min-height: 10rem;
 }
 
 .form-button {
@@ -66,16 +69,18 @@
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .form-button:hover {
-  background-color: #0056b3;
+  background-color: #d0d0d1;
 }
 
 .form-input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #3030368f;
   border-radius: 0.25rem;
   height: 3rem;
+  outline: none;
 }
