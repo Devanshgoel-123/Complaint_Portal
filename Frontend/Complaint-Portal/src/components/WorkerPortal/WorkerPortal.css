@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --background: hsl(240, 5%, 6%);
+  --foreground: hsl(60, 5%, 90%);
+  --primary: hsl(240, 0%, 90%);
+  --primary-foreground: hsl(60, 0%, 0%);
+  --secondary: hsl(240, 4%, 15%);
+  --secondary-foreground: hsl(60, 5%, 85%);
+  --accent: hsl(240, 0%, 13%);
+  --accent-foreground: hsl(60, 0%, 100%);
+  --destructive: hsl(0, 60%, 50%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 5%, 25%);
+  --muted-foreground: hsl(60, 5%, 85%);
+  --card: hsl(240, 4%, 10%);
+  --card-foreground: hsl(60, 5%, 90%);
+  --popover: hsl(240, 5%, 15%);
+  --popover-foreground: hsl(60, 5%, 85%);
+  --border: hsl(240, 6%, 20%);
+  --input: hsl(240, 6%, 20%);
+  --ring: hsl(240, 5%, 90%);
+  --radius: 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--background);
+  font-family: Manrope;
+}
+
+.content {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.worker-card-header {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: 0.0625rem solid var(--muted);
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.status-pending {
+  color: hsl(45, 100%, 50%);
+}
+
+.status-completed {
+  color: hsl(120, 100%, 30%);
+}
+
+.card-button {
+  width: 100%;
+  padding: 0.625rem;
+  background-color: var(--primary);
+  color: black;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-button:hover {
+  background-color: #d0d0d1;
+}
+
+.rating {
+  display: flex;
+}
+
+.star {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: hsl(45, 100%, 50%);
+}
+
+.star.filled {
+  fill: hsl(45, 100%, 50%);
+}

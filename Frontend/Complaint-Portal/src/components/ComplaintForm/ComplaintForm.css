@@ -52,6 +52,9 @@
   display: none;
 }
 
+.description {
+  grid-column: 1/3;
+}
 .form-textarea {
   resize: vertical;
   outline: none;
