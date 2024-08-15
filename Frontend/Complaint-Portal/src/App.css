@@ -1,8 +1,10 @@
-/* Apply this style to ensure that the footer is at the bottom when content is short */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#root {
+  height: 100%;
 }
 
 body,
@@ -15,16 +17,15 @@ html {
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  min-height: 100vh;
 }
 
 .main {
-  flex: 1; /* Grow to fill the space between the navbar and footer */
+  flex: 1;
 }
 
-/* Add some basic styling for the footer */
 .footer {
-  background-color: var(--card); /* Use your preferred background color */
-  color: var(--primary); /* Use your preferred text color */
+  background-color: var(--card);
+  color: var(--primary);
   text-align: center;
 }

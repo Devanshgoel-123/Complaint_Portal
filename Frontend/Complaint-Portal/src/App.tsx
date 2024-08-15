@@ -1,3 +1,5 @@
+import React from "react";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,9 +10,9 @@ import StudentPortal from "./components/StudentPortal/StudentPortal";
 import WorkerPortal from "./components/WorkerPortal/WorkerPortal";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import "./App.css";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <div className="app-container">
@@ -19,17 +21,13 @@ function App() {
           <Routes>
             <Route path="/student" element={<StudentPortal />} />
             <Route path="/worker" element={<WorkerPortal />} />
-            {/* Redirect to Vercel's 404 page */}
-            <Route
-              path="*"
-              element={<Navigate to="https://vercel.com/404" />}
-            />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
-        <Footer className="footer" />
+        <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default App;
