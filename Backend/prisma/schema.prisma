@@ -14,27 +14,34 @@ datasource db {
 }
 
 model user {
-  id     Int    @id @default(autoincrement())
-  email  String @unique
-  hostel String
-  Room   String
-  Name   String
+  user_id   Int         @id @default(autoincrement())
+  email     String      @unique
+  hostel    String
+  room      String
+  name      String
+  complaint complaint[]
 }
 
 model complaint {
-  id             Int    @id @default(autoincrement())
-  category       String
-  subCategory    String
-  hostel         String
-  Room           String
-  Name           String
-  workerAssigned Int
+  complaint_id Int      @id @default(autoincrement())
+  category     String
+  subCategory  String
+  hostel       String
+  room         Int
+  time         DateTime
+  otp          Int
+  userId       Int
+  user         user     @relation(fields: [userId], references: [user_id])
+  workerId     Int
+  worker       worker?  @relation(fields: [workerId], references: [worker_id])
 }
 
 model worker {
-  id       Int    @id @default(autoincrement())
-  name     String
-  category String
-  Contact  Int
-  hostel   String
+  worker_id Int         @id @default(autoincrement())
+  name      String
+  category  String
+  contact   Int
+  hostel    String
+  password  String
+  complaint complaint[]
 }
